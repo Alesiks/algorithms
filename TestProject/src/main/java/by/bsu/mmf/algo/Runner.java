@@ -1,4 +1,4 @@
-package by.bsu.mmf.springexamples;
+package by.bsu.mmf.algo;
 
 /**
  * Created by Ales on 29.01.17.

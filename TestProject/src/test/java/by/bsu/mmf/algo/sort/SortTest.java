@@ -1,4 +1,4 @@
-package by.bsu.mmf.springexamples.sort;
+package by.bsu.mmf.algo.sort;
 
 import org.junit.Test;
 
@@ -24,8 +24,8 @@ public class SortTest {
     public void insertionSortArrayLong_test() {
         Long[] arrayForSorting = {-200L, 1L, 3L, 59L, 5L, 65L, 43L, 21L, 0L, -1L, 0L};
 
-        Long[] sortedArray = insertionSort.sort(arrayForSorting);
-        List<Long> newList = Arrays.stream(sortedArray).collect(Collectors.toList());
+        insertionSort.sort(arrayForSorting);
+        List<Long> newList = Arrays.stream(arrayForSorting).collect(Collectors.toList());
         newList.forEach(item -> System.out.print(item + " "));
     }
 
@@ -33,8 +33,8 @@ public class SortTest {
     public void selectionSortArrayLong_test() {
         Long[] arrayForSorting = {-200L, 1L, 3L, 59L, 5L, 65L, 43L, 21L, 0L, -1L, 0L};
 
-        Long[] sortedArray = selectionSort.sort(arrayForSorting);
-        List<Long> newList = Arrays.stream(sortedArray).collect(Collectors.toList());
+        selectionSort.sort(arrayForSorting);
+        List<Long> newList = Arrays.stream(arrayForSorting).collect(Collectors.toList());
         newList.forEach(item -> System.out.print(item + " "));
     }
 
@@ -42,8 +42,8 @@ public class SortTest {
     public void bubbleSortArrayLong_test() {
         Long[] arrayForSorting = {-200L, 1L, 3L, 59L, 5L, 65L, 43L, 21L, 0L, -1L, 0L};
 
-        Long[] sortedArray = bubbleSort.sort(arrayForSorting);
-        List<Long> newList = Arrays.stream(sortedArray).collect(Collectors.toList());
+        bubbleSort.sort(arrayForSorting);
+        List<Long> newList = Arrays.stream(arrayForSorting).collect(Collectors.toList());
         newList.forEach(item -> System.out.print(item + " "));
     }
 
@@ -51,8 +51,8 @@ public class SortTest {
     public void quickSortArrayLong_test() {
         Long[] arrayForSorting = {-200L, 1L, 3L, 59L, 5L, 65L, 43L, 21L, 0L, -1L, 0L};
 
-        Long[] sortedArray = quickSort.sort(arrayForSorting);
-        List<Long> newList = Arrays.stream(sortedArray).collect(Collectors.toList());
+        quickSort.sort(arrayForSorting);
+        List<Long> newList = Arrays.stream(arrayForSorting).collect(Collectors.toList());
         newList.forEach(item -> System.out.print(item + " "));
     }
 
@@ -68,7 +68,27 @@ public class SortTest {
         for(int i = 0; i < 5; i++) {
             String[] arrayCopy = strArrayForSorting.clone();
             double startTime = System.nanoTime();
-            sortedArray = bubbleSort.sort(arrayCopy);
+            bubbleSort.sort(arrayCopy);
+            double endTime = System.nanoTime();
+            System.out.println("try " + i + ", time : " + (endTime - startTime) / 1000000 + " ms");
+        }
+        List<String> newList = Arrays.stream(sortedArray).collect(Collectors.toList());
+        newList.forEach(item -> System.out.println(item + " "));
+    }
+
+    @Test
+    public void bubbleSortRecursionArrayString_test() {
+        final int arrayLength = 10000;
+        String[] strArrayForSorting = new String[arrayLength];
+        for (int i = 0; i < arrayLength; i++) {
+            strArrayForSorting[i] = getRandomString();
+        }
+
+        String[] sortedArray = new String[10];
+        for(int i = 0; i < 5; i++) {
+            String[] arrayCopy = strArrayForSorting.clone();
+            double startTime = System.nanoTime();
+            bubbleSort.sort(arrayCopy, String::compareTo);
             double endTime = System.nanoTime();
             System.out.println("try " + i + ", time : " + (endTime - startTime) / 1000000 + " ms");
         }

@@ -1,4 +1,4 @@
-package by.bsu.mmf.springexamples.sort;
+package by.bsu.mmf.algo.sort;
 
 import java.util.Comparator;
 
@@ -8,22 +8,25 @@ import java.util.Comparator;
 public class QuickSort implements Sort {
 
     @Override
-    public <T> T[] sort(T[] arrayToSort, Comparator<T> comparator) {
-        return null;
+    public <T> void sort(T[] arrayToSort, Comparator<T> comparator) {
+
     }
 
     @Override
-    public <T extends Comparable> T[] sort(T[] arrayToSort) {
-        return quickSort(arrayToSort, 0, arrayToSort.length - 1);
+    public <T extends Comparable> void sort(T[] arrayToSort) {
+        quickSort(arrayToSort, 0, arrayToSort.length - 1);
     }
 
-    private <T extends Comparable> T[] quickSort(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
+    private <T extends Comparable> void quickSort(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
         if (firstElementIndex < lastElementIndex) {
             int separateElementIndex = findSeparatingElement(arrayToSort, firstElementIndex, lastElementIndex);
-            quickSort(arrayToSort, firstElementIndex, separateElementIndex);
-            quickSort(arrayToSort, separateElementIndex + 1, lastElementIndex);
+            if (separateElementIndex - firstElementIndex > 0) {
+                quickSort(arrayToSort, firstElementIndex, separateElementIndex-1);
+            }
+            if (lastElementIndex - (separateElementIndex + 1) > 0) {
+                quickSort(arrayToSort, separateElementIndex + 1, lastElementIndex);
+            }
         }
-        return arrayToSort;
     }
 
     private <T extends Comparable> int findSeparatingElement(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
@@ -41,6 +44,7 @@ public class QuickSort implements Sort {
             }
             if (i < j && arrayToSort[i].compareTo(arrayToSort[j]) != 0) {
                 swapElements(arrayToSort, i, j);
+            } else if (arrayToSort[i].compareTo(arrayToSort[j]) == 0 && i != j) {
                 i++;
             }
         }

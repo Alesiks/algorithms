@@ -1,4 +1,4 @@
-package by.bsu.mmf.springexamples.sort;
+package by.bsu.mmf.algo.sort;
 
 import java.util.Comparator;
 
@@ -8,7 +8,7 @@ import java.util.Comparator;
 public class SelectionSort implements Sort {
 
     @Override
-    public <T> T[] sort(T[] arrayToSort, Comparator<T> comparator) {
+    public <T> void sort(T[] arrayToSort, Comparator<T> comparator) {
         for (int i = 0; i < arrayToSort.length; i++) {
             T tempMinElement = arrayToSort[i];
             int tempMinElementIndex = i;
@@ -20,11 +20,10 @@ public class SelectionSort implements Sort {
             }
             swapElements(arrayToSort, i, tempMinElementIndex);
         }
-        return arrayToSort;
     }
 
     @Override
-    public <T extends Comparable> T[] sort(T[] arrayToSort) {
+    public <T extends Comparable> void sort(T[] arrayToSort) {
         for (int i = 0; i < arrayToSort.length; i++) {
             T tempMinElement = arrayToSort[i];
             int tempMinElementIndex = i;
@@ -36,7 +35,6 @@ public class SelectionSort implements Sort {
             }
             swapElements(arrayToSort, i, tempMinElementIndex);
         }
-        return arrayToSort;
     }
 
     private <T> void swapElements(T[] array, int i, int j) {

@@ -1,4 +1,4 @@
-package by.bsu.mmf.springexamples.sort;
+package by.bsu.mmf.algo.sort;
 
 import java.util.Comparator;
 
@@ -8,7 +8,7 @@ import java.util.Comparator;
 public class InsertionSort implements Sort {
 
     @Override
-    public <T> T[] sort(T[] arrayToSort, Comparator<T> comparator) {
+    public <T> void sort(T[] arrayToSort, Comparator<T> comparator) {
         for (int i = 0; i < arrayToSort.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (comparator.compare(arrayToSort[i], arrayToSort[j]) < 0) {
@@ -17,11 +17,10 @@ public class InsertionSort implements Sort {
             }
         }
 
-        return arrayToSort;
     }
 
     @Override
-    public <T extends Comparable> T[] sort(T[] arrayToSort) {
+    public <T extends Comparable> void sort(T[] arrayToSort) {
         for (int i = 0; i < arrayToSort.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (arrayToSort[i].compareTo(arrayToSort[j]) < 0) {
@@ -29,8 +28,6 @@ public class InsertionSort implements Sort {
                 }
             }
         }
-
-        return arrayToSort;
     }
 
     private <T> void moveItems(T[] arrayToSort, int i, int j) {

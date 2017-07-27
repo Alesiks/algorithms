@@ -1,4 +1,4 @@
-package by.bsu.mmf.springexamples.sort;
+package by.bsu.mmf.algo.sort;
 
 import java.util.Comparator;
 
@@ -8,22 +8,12 @@ import java.util.Comparator;
 public class BubbleSort implements Sort {
 
     @Override
-    public <T> T[] sort(T[] arrayToSort, Comparator<T> comparator) {
-        boolean isSorted = false;
-        while (!isSorted) {
-            isSorted = true;
-            for (int j = 0; j < arrayToSort.length - 1; j++) {
-                if (comparator.compare(arrayToSort[j], arrayToSort[j + 1]) > 0) {
-                    swapElements(arrayToSort, j, j + 1);
-                    isSorted = false;
-                }
-            }
-        }
-        return arrayToSort;
+    public <T> void sort(T[] arrayToSort, Comparator<T> comparator) {
+        sortRecursion(arrayToSort, comparator, arrayToSort.length-1);
     }
 
     @Override
-    public <T extends Comparable> T[] sort(T[] arrayToSort) {
+    public <T extends Comparable> void sort(T[] arrayToSort) {
         boolean isSorted = false;
         int lastSwappedIndex = arrayToSort.length - 1;
         int firstIndex = 0;
@@ -48,7 +38,19 @@ public class BubbleSort implements Sort {
             }
             firstIndex = tempFirstIndex;
         }
-        return arrayToSort;
+    }
+
+    private <T> void sortRecursion(T[] arrayToSort, Comparator<T> comparator, int count) {
+        boolean isSorted = true;
+        for(int i = 0; i < count; i++) {
+            if(comparator.compare(arrayToSort[i], arrayToSort[i+1]) > 0) {
+                swapElements(arrayToSort, i, i + 1);
+                isSorted = false;
+            }
+        }
+        if(count > 1 && !isSorted) {
+            sortRecursion(arrayToSort, comparator, count-1);
+        }
     }
 
     private <T> void swapElements(T[] array, int i, int j) {
