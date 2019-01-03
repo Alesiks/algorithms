@@ -47,7 +47,7 @@ public class SortTest {
         newList.forEach(item -> System.out.print(item + " "));
     }
 
-    @Test
+//    @Test
     public void quickSortArrayLong_test() {
         Long[] arrayForSorting = {-200L, 1L, 3L, 59L, 5L, 65L, 43L, 21L, 0L, -1L, 0L};
 
