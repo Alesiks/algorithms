@@ -12,19 +12,20 @@ public class HeapTest {
         Heap heap = new Heap();
 
         int n = Integer.parseInt(bufferedReader.readLine().trim());
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             String line = bufferedReader.readLine().trim();
             String[] input = line.split(" ");
-            if(input[0].equals("1")) {
+            if (input[0].equals("1")) {
                 int value = Integer.valueOf(input[1]);
                 heap.add(value);
-            } else if(input[0].equals("2")) {
+            } else if (input[0].equals("2")) {
                 heap.pop();
-            } else if(input[0].equals("3")) {
+            } else if (input[0].equals("3")) {
                 int result = heap.getRoot();
                 System.out.println(result);
             }
         }
 
     }
+
 }
