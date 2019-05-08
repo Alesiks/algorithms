@@ -2,7 +2,7 @@ package by.bsu.mmf.algo.dynamic;
 
 import java.util.Arrays;
 
-public class LongestIncreasingSubSequence {
+public class LongestIncreasingSubsequence {
 
     // solution O(n^2)
     public int getSize1(int[] arr) {
