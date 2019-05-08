@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(JUnit4.class)
 public class LongestIncreasingSubSequenceTest {
 
-    LongestIncreasingSubSequence longestIncreasingSubsequence = new LongestIncreasingSubSequence();
+    LongestIncreasingSubsequence longestIncreasingSubsequence = new LongestIncreasingSubsequence();
 
     @Test
     public void testGetSize1_simple() {
