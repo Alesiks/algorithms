@@ -8,6 +8,7 @@
 - quick sort
 - selection sort
 - Markov chain (Frog in maze)
+- KMP prefix function
 
 ## Data structures
 - heap
