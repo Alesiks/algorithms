@@ -1,6 +1,5 @@
-package by.bsu.mmf.strings;
+package by.bsu.mmf.algo.strings;
 
-import by.bsu.mmf.algo.strings.KMPAlgorithm;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
