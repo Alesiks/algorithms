@@ -8,6 +8,7 @@
 - quick sort
 - selection sort
 - Markov chain (Frog in maze)
+- breadth first search (Shortest reach)
 - topological sort
 - KMP prefix function
 

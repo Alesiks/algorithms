@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * task from HackerRank
- * Markov chain are used to solve problem
+ * Markov chain is used to solve the problem
  * <p>
  * Alef the Frog is in a two-dimensional maze represented as a table.
  * The maze has the following characteristics:
