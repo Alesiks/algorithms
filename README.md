@@ -4,6 +4,7 @@
 - greatest common divisor
 - longest increasing subsequence
 - longest common subsequence
+- max sub array sum
 - bubble sort
 - insertion sort
 - quick sort
