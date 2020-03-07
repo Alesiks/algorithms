@@ -13,11 +13,11 @@ public class QuickSort implements Sort {
     }
 
     @Override
-    public <T extends Comparable> void sort(T[] arrayToSort) {
+    public <T extends Comparable<T>> void sort(T[] arrayToSort) {
         quickSort(arrayToSort, 0, arrayToSort.length - 1);
     }
 
-    private <T extends Comparable> void quickSort(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
+    private <T extends Comparable<T>> void quickSort(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
         if (firstElementIndex < lastElementIndex) {
             int separateElementIndex = findSeparatingElement(arrayToSort, firstElementIndex, lastElementIndex);
             if (separateElementIndex - firstElementIndex > 0) {
@@ -29,7 +29,7 @@ public class QuickSort implements Sort {
         }
     }
 
-    private <T extends Comparable> int findSeparatingElement(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
+    private <T extends Comparable<T>> int findSeparatingElement(T[] arrayToSort, int firstElementIndex, int lastElementIndex) {
         int basicElementIndex = (firstElementIndex + lastElementIndex) / 2;
         T basicElementValue = arrayToSort[basicElementIndex];
 
@@ -51,7 +51,7 @@ public class QuickSort implements Sort {
         return i;
     }
 
-    private <T extends Comparable> void swapElements(T[] array, int i, int j) {
+    private <T extends Comparable<T>> void swapElements(T[] array, int i, int j) {
         T temp = array[i];
         array[i] = array[j];
         array[j] = temp;

@@ -16,11 +16,10 @@ public class InsertionSort implements Sort {
                 }
             }
         }
-
     }
 
     @Override
-    public <T extends Comparable> void sort(T[] arrayToSort) {
+    public <T extends Comparable<T>> void sort(T[] arrayToSort) {
         for (int i = 0; i < arrayToSort.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (arrayToSort[i].compareTo(arrayToSort[j]) < 0) {

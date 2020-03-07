@@ -24,7 +24,6 @@ public class Heap {
         if(size > 1) {
             heapifyUp(size - 1);
         }
-
     }
 
     public int pop() {

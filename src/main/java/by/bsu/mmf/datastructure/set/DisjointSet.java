@@ -27,8 +27,6 @@ public class DisjointSet {
         } else if(representativeNodeForA.getRank() < representativeNodeForB.getRank()) {
             representativeNodeForA.setParent(representativeNodeForB);
         }
-
-
     }
 
     public Node findRepresentativeNode(int value) {
@@ -37,13 +35,9 @@ public class DisjointSet {
             representativeNode = representativeNode.getParent();
         }
         return representativeNode;
-
     }
 
-
-
 }
-
 
 
 class Node {

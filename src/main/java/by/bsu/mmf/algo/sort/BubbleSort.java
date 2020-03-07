@@ -13,7 +13,7 @@ public class BubbleSort implements Sort {
     }
 
     @Override
-    public <T extends Comparable> void sort(T[] arrayToSort) {
+    public <T extends Comparable<T>> void sort(T[] arrayToSort) {
         boolean isSorted = false;
         int lastSwappedIndex = arrayToSort.length - 1;
         int firstIndex = 0;

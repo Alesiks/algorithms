@@ -13,17 +13,16 @@ public class TopologicalSort {
         Deque<Integer> dfsStack = new LinkedList<>();
 
         List<Integer> vertexes = new ArrayList<>(graph.keySet());
-        for (int i = 0; i < vertexes.size(); i++) {
-            Integer startVertex = vertexes.get(i);
-            if(usedVertexes.contains(startVertex)) {
+        for (Integer startVertex : vertexes) {
+            if (usedVertexes.contains(startVertex)) {
                 continue;
             }
             dfsStack.push(startVertex);
             while (!dfsStack.isEmpty()) {
                 Integer vertex = dfsStack.getFirst();
-                if(usedVertexes.contains(vertex)) {
+                if (usedVertexes.contains(vertex)) {
                     dfsStack.pop();
-                    if(!usedInSortingVertexes.contains(vertex)) {
+                    if (!usedInSortingVertexes.contains(vertex)) {
                         sortedVertexes.push(vertex);
                         usedInSortingVertexes.add(vertex);
                     }
@@ -41,6 +40,5 @@ public class TopologicalSort {
         IntStream.range(0, sortedVertexes.size()).forEachOrdered(i -> topologicalSorting.add(sortedVertexes.removeFirst()));
         return topologicalSorting;
     }
-
 
 }

@@ -23,7 +23,7 @@ public class SelectionSort implements Sort {
     }
 
     @Override
-    public <T extends Comparable> void sort(T[] arrayToSort) {
+    public <T extends Comparable<T>> void sort(T[] arrayToSort) {
         for (int i = 0; i < arrayToSort.length; i++) {
             T tempMinElement = arrayToSort[i];
             int tempMinElementIndex = i;
