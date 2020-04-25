@@ -14,6 +14,7 @@
 - depth first search (Connected cell in a grid)
 - topological sort
 - KMP prefix function
+- Aho-Corasick (search multiple strings in text)
 
 ## Data structures
 - heap
