@@ -1,6 +1,6 @@
 package by.bsu.mmf.datastructure.tree;
 
-public class IsTreeBinary {
+public class BinarySearchTreeValidator {
 
     public boolean isValidBST(TreeNode root) {
         return isValid(root.left, root.val, Long.MIN_VALUE) &&
